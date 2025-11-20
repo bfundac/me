@@ -1,0 +1,607 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Fully automated SEO keyword tool",
+        "formDescription": "=Fully automated completion of each SEO keyword expansion, search volume query, intention evaluation, business value evaluation, competition evaluation, and final output of rating report",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "=keyword1",
+              "placeholder": "Enter one keyword you want to expand",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "keyword2",
+              "placeholder": "Enter one keyword you want to expand"
+            },
+            {
+              "fieldLabel": "keyword3",
+              "placeholder": "Enter one keyword you want to expand"
+            },
+            {
+              "fieldLabel": "intent_sentence",
+              "fieldType": "textarea",
+              "placeholder": "Tell me your purpose in one sentence. Example: \"My direct target users are people who like labubu, and I want to sell labubu dolls. People who like other dolls are my indirect users.\"",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "intent_word",
+              "placeholder": "From your keywords above, pick the one with the strongest intent and best match. Example:  \"Labubu buy\".",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "buttonLabel": "Submit",
+          "ignoreBots": true,
+          "customCss": ":root {\n    /* 字体设置 - 使用更现代的字体栈 */\n    --font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n    --font-weight-normal: 400;\n    --font-weight-medium: 500;\n    --font-weight-bold: 600;\n    --font-size-body: 14px;\n    --font-size-label: 15px;\n    --font-size-test-notice: 13px;\n    --font-size-input: 15px;\n    --font-size-header: 24px;\n    --font-size-paragraph: 15px;\n    --font-size-link: 13px;\n    --font-size-error: 13px;\n    --font-size-html-h1: 32px;\n    --font-size-html-h2: 24px;\n    --font-size-html-h3: 20px;\n    --font-size-html-h4: 16px;\n    --font-size-html-h5: 14px;\n    --font-size-html-h6: 12px;\n    --font-size-subheader: 16px;\n  \n    /* 现代化配色方案 */\n    --color-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n    --color-test-notice-text: #f59e0b;\n    --color-test-notice-bg: #fef3c7;\n    --color-test-notice-border: #fcd34d;\n    --color-card-bg: rgba(255, 255, 255, 0.95);\n    --color-card-border: rgba(255, 255, 255, 0.2);\n    --color-card-shadow: rgba(0, 0, 0, 0.1);\n    --color-link: #6366f1;\n    --color-header: #1f2937;\n    --color-label: #374151;\n    --color-input-border: #d1d5db;\n    --color-input-text: #1f2937;\n    --color-input-bg: #ffffff;\n    --color-focus-border: #6366f1;\n    --color-focus-shadow: rgba(99, 102, 241, 0.2);\n    --color-submit-btn-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n    --color-submit-btn-text: #ffffff;\n    --color-submit-btn-hover: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);\n    --color-error: #ef4444;\n    --color-success: #10b981;\n    --color-required: #ef4444;\n    --color-clear-button-bg: #6b7280;\n    --color-html-text: #374151;\n    --color-html-link: #6366f1;\n    --color-header-subtext: #6b7280;\n  \n    /* 现代化圆角 */\n    --border-radius-card: 16px;\n    --border-radius-input: 8px;\n    --border-radius-button: 8px;\n    --border-radius-clear-btn: 50%;\n    --card-border-radius: 16px;\n  \n    /* 优化间距 */\n    --padding-container-top: 32px;\n    --padding-card: 32px;\n    --padding-test-notice-vertical: 16px;\n    --padding-test-notice-horizontal: 24px;\n    --margin-bottom-card: 24px;\n    --padding-form-input: 16px;\n    --card-padding: 32px;\n    --card-margin-bottom: 24px;\n  \n    /* 尺寸 */\n    --container-width: 480px;\n    --submit-btn-height: 52px;\n    --checkbox-size: 20px;\n  \n    /* 现代化阴影和效果 */\n    --box-shadow-card: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);\n    --box-shadow-input-focus: 0 0 0 3px var(--color-focus-shadow);\n    --box-shadow-button: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n    --box-shadow-button-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n    --opacity-placeholder: 0.6;\n    --transition-all: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  }\n  \n  /* 容器样式 */\n  .form-container {\n    background: var(--color-background);\n    min-height: 100vh;\n    padding: var(--padding-container-top) 16px;\n    font-family: var(--font-family);\n    line-height: 1.6;\n  }\n  \n  /* 卡片样式 */\n  .form-card {\n    background: var(--color-card-bg);\n    border: 1px solid var(--color-card-border);\n    border-radius: var(--border-radius-card);\n    box-shadow: var(--box-shadow-card);\n    padding: var(--padding-card);\n    margin: 0 auto var(--margin-bottom-card);\n    max-width: var(--container-width);\n    backdrop-filter: blur(10px);\n    transition: var(--transition-all);\n  }\n  \n  .form-card:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);\n  }\n  \n  /* 测试通知样式 */\n  .test-notice {\n    background: var(--color-test-notice-bg);\n    border: 1px solid var(--color-test-notice-border);\n    border-radius: var(--border-radius-input);\n    color: var(--color-test-notice-text);\n    font-size: var(--font-size-test-notice);\n    font-weight: var(--font-weight-medium);\n    padding: var(--padding-test-notice-vertical) var(--padding-test-notice-horizontal);\n    margin-bottom: 24px;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n  }\n  \n  .test-notice::before {\n    content: \"⚠️\";\n    font-size: 16px;\n  }\n  \n  /* 标题样式 */\n  .form-header {\n    color: var(--color-header);\n    font-size: var(--font-size-header);\n    font-weight: var(--font-weight-bold);\n    margin-bottom: 8px;\n    text-align: left; /* 将标题从居中改为左对齐 */\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n    background-clip: text;\n  }\n  \n  .form-subheader {\n    color: var(--color-header-subtext);\n    font-size: var(--font-size-subheader);\n    font-weight: var(--font-weight-normal);\n    margin-bottom: 32px;\n    text-align: left !important; /* 强制左对齐 */\n    line-height: 1.5;\n  }\n  \n  /* 表单组样式 */\n  .form-group {\n    margin-bottom: 24px;\n  }\n  \n  /* 标签样式 */\n  .form-label {\n    color: var(--color-label);\n    font-size: var(--font-size-label);\n    font-weight: var(--font-weight-medium);\n    margin-bottom: 8px;\n    display: block;\n  }\n  \n  .form-label.required::after {\n    content: \" *\";\n    color: var(--color-required);\n  }\n  \n  /* 输入框样式 */\n  .form-input,\n  .form-select,\n  .form-textarea {\n    background: var(--color-input-bg);\n    border: 2px solid var(--color-input-border);\n    border-radius: var(--border-radius-input);\n    color: var(--color-input-text);\n    font-family: var(--font-family);\n    font-size: var(--font-size-input);\n    padding: var(--padding-form-input);\n    width: 100%;\n    transition: var(--transition-all);\n    box-sizing: border-box;\n  }\n  \n  .form-input:focus,\n  .form-select:focus,\n  .form-textarea:focus {\n    border-color: var(--color-focus-border);\n    box-shadow: var(--box-shadow-input-focus);\n    outline: none;\n    transform: translateY(-1px);\n  }\n  \n  .form-input::placeholder,\n  .form-textarea::placeholder {\n    color: var(--color-input-text);\n    opacity: var(--opacity-placeholder);\n  }\n  \n  /* 复选框样式 */\n  .form-checkbox {\n    appearance: none;\n    width: var(--checkbox-size);\n    height: var(--checkbox-size);\n    border: 2px solid var(--color-input-border);\n    border-radius: 4px;\n    background: var(--color-input-bg);\n    cursor: pointer;\n    position: relative;\n    transition: var(--transition-all);\n  }\n  \n  .form-checkbox:checked {\n    background: var(--color-focus-border);\n    border-color: var(--color-focus-border);\n  }\n  \n  .form-checkbox:checked::after {\n    content: \"✓\";\n    color: white;\n    font-size: 14px;\n    font-weight: bold;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n  \n  .form-checkbox:focus {\n    box-shadow: var(--box-shadow-input-focus);\n  }\n  \n  /* 按钮样式 - 强制覆盖 */\n  .form-submit-btn,\n  button.form-submit-btn,\n  input[type=\"submit\"].form-submit-btn,\n  button[type=\"submit\"] {\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;\n    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;\n    background-color: #667eea !important;\n    border: none !important;\n    border-radius: var(--border-radius-button) !important;\n    color: #ffffff !important;\n    cursor: pointer !important;\n    font-family: var(--font-family) !important;\n    font-size: var(--font-size-input) !important;\n    font-weight: var(--font-weight-medium) !important;\n    height: var(--submit-btn-height) !important;\n    width: 100% !important;\n    transition: var(--transition-all) !important;\n    box-shadow: var(--box-shadow-button) !important;\n    position: relative !important;\n    overflow: hidden !important;\n    text-shadow: none !important;\n  }\n\n  .form-submit-btn::before {\n    content: \"\" !important;\n    position: absolute !important;\n    top: 0 !important;\n    left: -100% !important;\n    width: 100% !important;\n    height: 100% !important;\n    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;\n    transition: left 0.5s !important;\n  }\n\n  .form-submit-btn:hover,\n  button.form-submit-btn:hover,\n  input[type=\"submit\"].form-submit-btn:hover,\n  button[type=\"submit\"]:hover {\n    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%) !important;\n    background-image: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%) !important;\n    background-color: #5a67d8 !important;\n    box-shadow: var(--box-shadow-button-hover) !important;\n    transform: translateY(-2px) !important;\n  }\n\n  .form-submit-btn:hover::before {\n    left: 100% !important;\n  }\n\n  .form-submit-btn:active {\n    transform: translateY(0) !important;\n  }\n\n  .form-submit-btn:disabled {\n    opacity: 0.6 !important;\n    cursor: not-allowed !important;\n    transform: none !important;\n  }\n  \n  /* 错误样式 */\n  .form-error {\n    color: var(--color-error);\n    font-size: var(--font-size-error);\n    margin-top: 8px;\n    display: flex;\n    align-items: center;\n    gap: 6px;\n  }\n  \n  .form-error::before {\n    content: \"⚠\";\n    font-size: 14px;\n  }\n  \n  .form-input.error,\n  .form-select.error,\n  .form-textarea.error {\n    border-color: var(--color-error);\n    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);\n  }\n  \n  /* 成功样式 */\n  .form-success {\n    color: var(--color-success);\n    font-size: var(--font-size-error);\n    margin-top: 8px;\n    display: flex;\n    align-items: center;\n    gap: 6px;\n  }\n  \n  .form-success::before {\n    content: \"✓\";\n    font-size: 14px;\n  }\n  \n  /* 链接样式 */\n  .form-link {\n    color: var(--color-link);\n    font-size: var(--font-size-link);\n    text-decoration: none;\n    transition: var(--transition-all);\n    font-weight: var(--font-weight-medium);\n  }\n  \n  .form-link:hover {\n    text-decoration: underline;\n    color: var(--color-focus-border);\n  }\n  \n  /* 清除按钮样式 */\n  .form-clear-btn {\n    background: var(--color-clear-button-bg);\n    border: none;\n    border-radius: var(--border-radius-clear-btn);\n    color: white;\n    cursor: pointer;\n    font-size: 12px;\n    height: 24px;\n    width: 24px;\n    transition: var(--transition-all);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n  \n  .form-clear-btn:hover {\n    background: var(--color-error);\n    transform: scale(1.1);\n  }\n  \n  /* HTML内容样式 */\n  .form-html-content {\n    color: var(--color-html-text);\n    font-size: var(--font-size-paragraph);\n    line-height: 1.6;\n  }\n  \n  .form-html-content h1 {\n    font-size: var(--font-size-html-h1);\n    font-weight: var(--font-weight-bold);\n    margin-bottom: 16px;\n  }\n  .form-html-content h2 {\n    font-size: var(--font-size-html-h2);\n    font-weight: var(--font-weight-bold);\n    margin-bottom: 14px;\n  }\n  .form-html-content h3 {\n    font-size: var(--font-size-html-h3);\n    font-weight: var(--font-weight-bold);\n    margin-bottom: 12px;\n  }\n  .form-html-content h4 {\n    font-size: var(--font-size-html-h4);\n    font-weight: var(--font-weight-bold);\n    margin-bottom: 10px;\n  }\n  .form-html-content h5 {\n    font-size: var(--font-size-html-h5);\n    font-weight: var(--font-weight-bold);\n    margin-bottom: 8px;\n  }\n  .form-html-content h6 {\n    font-size: var(--font-size-html-h6);\n    font-weight: var(--font-weight-bold);\n    margin-bottom: 6px;\n  }\n  \n  .form-html-content a {\n    color: var(--color-html-link);\n    text-decoration: none;\n    font-weight: var(--font-weight-medium);\n    transition: var(--transition-all);\n  }\n  \n  .form-html-content a:hover {\n    text-decoration: underline;\n    color: var(--color-focus-border);\n  }\n  \n  /* 响应式设计 */\n  @media (max-width: 640px) {\n    .form-container {\n      padding: 16px 12px;\n    }\n  \n    .form-card {\n      padding: 24px;\n      border-radius: 12px;\n    }\n  \n    .form-header {\n      font-size: 20px;\n    }\n  \n    .form-subheader {\n      font-size: 14px;\n    }\n  }\n  \n  /* 加载动画 */\n  @keyframes pulse {\n    0%,\n    100% {\n      opacity: 1;\n    }\n    50% {\n      opacity: 0.5;\n    }\n  }\n  \n  .form-loading {\n    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\n  }\n  \n  .form-textarea {\n    min-height: 120px !important; /* 从原来的80px增加到120px (1.5倍) */\n    resize: vertical; /* 允许用户垂直调整大小 */\n    font-family: var(--font-family);\n    line-height: 1.5;\n  }\n  \n  /* 添加notes元素样式，使用占位符颜色 */\n  .notes,\n  .notes,\n  [class*=\"notes\"],\n  *[data-notes],\n  .form-notes {\n    color: var(--color-input-text);\n    opacity: var(--opacity-placeholder) !important; /* 使用占位符透明度 */\n    font-size: var(--font-size-input);\n    font-family: var(--font-family);\n    font-style: italic;\n    margin-top: 4px !important; /* 缩短与上方元素的距离 */\n    margin-bottom: 12px;\n    line-height: 1.4;\n  }\n  \n  /* 特别针对Element Name为notes的元素 */\n  notes {\n    display: block;\n    color: var(--color-input-text);\n    opacity: var(--opacity-placeholder) !important;\n    font-size: var(--font-size-input);\n    font-family: var(--font-family);\n    font-style: italic;\n    margin-top: 4px !important; /* 缩短距离 */\n    margin-bottom: 12px;\n    line-height: 1.4;\n  }\n  "
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        -1328,
+        368
+      ],
+      "id": "fe547c53-21e2-4297-a541-6755bce16336",
+      "name": "On form submission",
+      "webhookId": "7cc63ed9-f25d-4b7a-b4a9-d953778c1819",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "waitBetweenTries": 1500,
+      "alwaysOutputData": false,
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "jsCode": "// 数据准备节点 - 提取种子关键词并设置API配置\n// 运行模式: Run Once for All Items\n\n// 位置映射：国家名称 → 位置代码\nconst locationMap = {\n    'Global': null,\n    'United States': 2840,\n    'United Kingdom': 2826,\n    'Australia': 2036,\n    'Germany': 2276,\n    'France': 2250,\n    'Japan': 2392,\n    'India': 2356,\n    'China': 2156,\n    'South Korea': 2410,\n    'Argentina': 2032,\n    'Brazil': 2076,\n    'Canada': 2124,\n    'Italy': 2380,\n    'Vietnam': 2704,\n    'Philippines': 2608,\n    'Singapore': 2702,\n    'South Africa': 2710,\n    'Thailand': 2764,\n    'Turkiye': 2792\n};\n\n// 语言映射：语言名称 → 语言代码\nconst languageMap = {\n    'English': 'en',\n    'Chinese (Simplified)': 'zh-CN',\n    'Chinese (Traditional)': 'zh-TW',\n    'Japanese': 'ja',\n    'Korean': 'ko',\n    'Spanish': 'es',\n    'French': 'fr',\n    'German': 'de',\n    'Russian': 'ru',\n    'Portuguese': 'pt',\n    'Arabic': 'ar',\n    'Italian': 'it',\n    'Dutch': 'nl',\n    'Polish': 'pl',\n    'Turkish': 'tr',\n    'Vietnamese': 'vi',\n    'Thai': 'th',\n    'Indonesian': 'id',\n    'Hindi': 'hi',\n    'Malay': 'ms'\n};\n\n// 从输入数据中提取种子关键词和意图字段\nconst inputData = $input.first().json;\nconst seedKeywords = [];\n\n// 提取intent_sentence和intent_word字段\nconst intentSentence = inputData.intent_sentence || null;\nconst intentWord = inputData.intent_word || null;\n\n// 提取并转换location和language字段\nconst locationName = inputData.location || 'Global';\nconst languageName = inputData.language || 'No Limit';\nconst locationCode = locationMap[locationName];\nconst languageCode = languageMap[languageName];\n\nconsole.log('提取的意图字段:');\nconsole.log(`  intent_sentence: ${intentSentence}`);\nconsole.log(`  intent_word: ${intentWord}`);\nconsole.log('提取的位置和语言字段:');\nconsole.log(`  location: ${locationName} → location_code: ${locationCode}`);\nconsole.log(`  language: ${languageName} → language_code: ${languageCode}`);\n\n// 提取所有keyword开头的字段\nObject.keys(inputData).forEach(key => {\n    if (key.startsWith('keyword') && inputData[key]) {\n        seedKeywords.push(inputData[key]);\n    }\n});\n\nconsole.log(`\\n发现 ${seedKeywords.length} 个种子关键词: ${seedKeywords.join(', ')}`);\n\n// 为每个种子关键词创建独立的输出项\nconst output = seedKeywords.map(keyword => ({\n    json: {\n        seed_keyword: keyword,\n        timestamp: new Date().toISOString()\n    }\n}));\n\n// 在最后添加意图字段作为单独的字典项\noutput.push({\n    json: {\n        intent_sentence: intentSentence,\n        intent_word: intentWord\n    }\n});\n\n// 添加位置和语言代码字典\noutput.push({\n    json: {\n        location_code: locationCode,\n        language_code: languageCode\n    }\n});\n\nconsole.log(`\\n输出 ${seedKeywords.length} 个关键词 + 1 个意图字段字典 + 1 个位置语言配置字典`);\n\nreturn output;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1136,
+        368
+      ],
+      "id": "9d66f44a-5760-423e-9312-8b2f8002e11f",
+      "name": "data_preparation",
+      "retryOnFail": false,
+      "notes": "Data preparation in progress...Data preparation in progress...Data preparation in progress"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dataforseo.com/v3/dataforseo_labs/google/keyword_suggestions/live",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[{\n  \"keyword\": \"{{ $json.seed_keyword }}\",\n  \"limit\": 200,\n  \"include_seed_keyword\": false,\n  \"include_serp_info\": false,\n  \"include_clickstream_data\": true\n}]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -656,
+        368
+      ],
+      "id": "665fd773-9675-4eed-a320-5175b93dd4c4",
+      "name": "keyword_suggestions",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "v2RuoZD7YLmDTpke",
+          "name": "dataforseo"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 关键词数据预处理节点 - 格式化和添加评分字段\n// 输入：keyword_merge_v2的输出（类似5.json格式）\n// 输出：格式化后的关键词数据，准备进行评分计算\n\n// Location代码映射表（从CSV文件生成）\nconst locationMap = {\n  \"2008\": \"Albania\", \"2012\": \"Algeria\", \"2024\": \"Angola\", \"2031\": \"Azerbaijan\",\n  \"2032\": \"Argentina\", \"2036\": \"Australia\", \"2040\": \"Austria\", \"2048\": \"Bahrain\",\n  \"2050\": \"Bangladesh\", \"2051\": \"Armenia\", \"2056\": \"Belgium\", \"2068\": \"Bolivia\",\n  \"2070\": \"Bosnia and Herzegovina\", \"2076\": \"Brazil\", \"2100\": \"Bulgaria\",\n  \"2104\": \"Myanmar (Burma)\", \"2116\": \"Cambodia\", \"2120\": \"Cameroon\", \"2124\": \"Canada\",\n  \"2144\": \"Sri Lanka\", \"2152\": \"Chile\", \"2156\": \"China\", \"2158\": \"Taiwan\",\n  \"2170\": \"Colombia\", \"2188\": \"Costa Rica\", \"2191\": \"Croatia\", \"2196\": \"Cyprus\",\n  \"2203\": \"Czech Republic\", \"2208\": \"Denmark\", \"2214\": \"Dominican Republic\",\n  \"2218\": \"Ecuador\", \"2222\": \"El Salvador\", \"2233\": \"Estonia\", \"2246\": \"Finland\",\n  \"2250\": \"France\", \"2268\": \"Georgia\", \"2276\": \"Germany\", \"2288\": \"Ghana\",\n  \"2300\": \"Greece\", \"2320\": \"Guatemala\", \"2344\": \"Hong Kong\", \"2348\": \"Hungary\",\n  \"2356\": \"India\", \"2360\": \"Indonesia\", \"2364\": \"Iran\", \"2368\": \"Iraq\",\n  \"2372\": \"Ireland\", \"2376\": \"Israel\", \"2380\": \"Italy\", \"2392\": \"Japan\",\n  \"2398\": \"Kazakhstan\", \"2400\": \"Jordan\", \"2404\": \"Kenya\", \"2410\": \"South Korea\",\n  \"2414\": \"Kuwait\", \"2418\": \"Laos\", \"2422\": \"Lebanon\", \"2428\": \"Latvia\",\n  \"2440\": \"Lithuania\", \"2442\": \"Luxembourg\", \"2446\": \"Macao\", \"2458\": \"Malaysia\",\n  \"2470\": \"Malta\", \"2484\": \"Mexico\", \"2498\": \"Moldova\", \"2499\": \"Mongolia\",\n  \"2504\": \"Morocco\", \"2524\": \"Nepal\", \"2528\": \"Netherlands\", \"2554\": \"New Zealand\",\n  \"2558\": \"Nicaragua\", \"2566\": \"Nigeria\", \"2578\": \"Norway\", \"2586\": \"Pakistan\",\n  \"2591\": \"Panama\", \"2600\": \"Paraguay\", \"2604\": \"Peru\", \"2608\": \"Philippines\",\n  \"2616\": \"Poland\", \"2620\": \"Portugal\", \"2630\": \"Puerto Rico\", \"2634\": \"Qatar\",\n  \"2642\": \"Romania\", \"2643\": \"Russia\", \"2682\": \"Saudi Arabia\", \"2688\": \"Serbia\",\n  \"2702\": \"Singapore\", \"2703\": \"Slovakia\", \"2705\": \"Slovenia\", \"2710\": \"South Africa\",\n  \"2724\": \"Spain\", \"2752\": \"Sweden\", \"2756\": \"Switzerland\", \"2764\": \"Thailand\",\n  \"2788\": \"Tunisia\", \"2792\": \"Turkey\", \"2804\": \"Ukraine\", \"2784\": \"United Arab Emirates\",\n  \"2826\": \"United Kingdom\", \"2840\": \"United States\", \"2858\": \"Uruguay\", \"2862\": \"Venezuela\",\n  \"2704\": \"Vietnam\", \"2887\": \"Yemen\", \"2818\": \"Egypt\"\n};\n\n// 计算单词数的辅助函数\nfunction countWords(keyword) {\n  if (!keyword) return 0;\n  // 按空格分割并过滤空字符串\n  return keyword.trim().split(/\\s+/).filter(word => word.length > 0).length;\n}\n\n// 处理单个关键词数据\nfunction processKeyword(keywordData, index) {\n  // 处理location_code\n  let locationValue = keywordData.location_code;\n  if (locationValue === null || locationValue === undefined) {\n    locationValue = \"global\";\n  } else if (locationMap[String(locationValue)]) {\n    locationValue = locationMap[String(locationValue)];\n  }\n\n  // 计算单词数\n  const wordCount = countWords(keywordData.keyword);\n\n  // 保存last_updated_time的值\n  const lastUpdatedTime = keywordData.last_updated_time || null;\n\n  // 构建新的数据结构（按指定顺序）\n  const processedKeyword = {\n    // 在seed_keyword前添加\n    \"number\": null,  // 序号先设为null，后续根据需要排序后再赋值\n    \"priority\": null,\n\n    // 原有字段\n    \"seed_keyword\": keywordData.seed_keyword || null,\n\n    // 在keyword前添加\n    \"main_category\": null,\n    \"sub_category\": null,\n\n    // keyword字段\n    \"keyword\": keywordData.keyword || null,\n\n    // 在keyword后添加\n    \"intent_type\": null,\n    \"word_count\": wordCount,\n\n    // 原有字段（删除api_type，处理location_code）\n    \"location_code\": locationValue,\n    // \"language_code\": keywordData.language_code || null,  // 已注释：不输出language_code\n    \"search_volume\": keywordData.search_volume || null,\n    \"cpc\": keywordData.cpc || null,\n    \"competition\": keywordData.competition || null,\n    \"competition_level\": keywordData.competition_level || null,\n    \"low_top_of_page_bid\": keywordData.low_top_of_page_bid || null,\n    \"high_top_of_page_bid\": keywordData.high_top_of_page_bid || null,\n\n    // 在high_top_of_page_bid后添加评分字段\n    \"search_volume_score\": null,\n    \"keyword_intent_score\": null,\n    \"intent_type_score\": null,\n    \"base_competition_score\": null,\n    \"cpc_score\": null,\n    \"bid_score\": null,\n    \"total_competition_score\": null,\n    \"total_score\": null,\n\n    // last_updated_time移到最后\n    \"last_updated_time\": lastUpdatedTime\n  };\n\n  return processedKeyword;\n}\n\n// 主处理逻辑\ntry {\n  console.log('开始预处理关键词数据...');\n\n  const inputItems = $input.all();\n  console.log(`接收到 ${inputItems.length} 个输入项`);\n\n  let processedKeywords = [];\n\n  // 处理所有输入项\n  inputItems.forEach((inputItem, itemIndex) => {\n    const data = inputItem.json;\n\n    // 检查是否包含keywords数组\n    if (data && data.keywords && Array.isArray(data.keywords)) {\n      console.log(`处理输入项 ${itemIndex + 1}，包含 ${data.keywords.length} 个关键词`);\n\n      // 处理每个关键词\n      data.keywords.forEach((keyword, keywordIndex) => {\n        // 使用全局索引计算序号\n        const globalIndex = processedKeywords.length;\n        const processed = processKeyword(keyword, globalIndex);\n        processedKeywords.push(processed);\n      });\n    } else {\n      console.log(`输入项 ${itemIndex + 1} 不包含keywords数组，跳过`);\n    }\n  });\n\n  console.log(`总共处理了 ${processedKeywords.length} 个关键词`);\n\n  // 创建输出数据结构\n  const outputData = {\n    metadata: {\n      generated_at: new Date().toISOString(),\n      total_keywords: processedKeywords.length,\n      processing_stage: \"pre_scoring\"\n    },\n    keywords: processedKeywords\n  };\n\n  // 返回处理后的数据\n  return {\n    json: outputData\n  };\n\n} catch (error) {\n  console.error('处理过程中发生错误:', error.message);\n  return {\n    json: {\n      error: error.message,\n      metadata: {\n        generated_at: new Date().toISOString(),\n        total_keywords: 0,\n        processing_stage: \"error\"\n      },\n      keywords: []\n    }\n  };\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -192,
+        368
+      ],
+      "id": "d386b57c-4145-410b-ae28-e6f1f8859993",
+      "name": "keyword_processor",
+      "alwaysOutputData": false,
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "jsCode": "// 关键词转文本节点 - 将JSON格式的关键词数据转换为文本格式供大模型使用\n// 输入：keyword_processor的输出（包含keywords数组）\n// 输出：适合Google Gemini等大模型处理的文本格式\n\n// 配置选项\nconst CONFIG = {\n  // 输出模式：single（单个合并文本）, batch（批量单独处理）, prompt（带上下文的prompt）\n  outputMode: 'batch',  // 默认批量模式\n\n  // 批处理大小（仅在batch模式下有效）\n  batchSize: 500,\n\n  // 文本分隔符（所有模式都使用英文逗号）\n  separator: ', ',\n\n  // 是否包含额外信息\n  includeMetadata: false,\n\n  // prompt模板（仅在prompt模式下有效）\n  promptTemplate: '请分析以下关键词：{keywords}'\n};\n\n// 处理单个关键词，提取需要的信息\nfunction processKeywordForText(keyword) {\n  const parts = [];\n\n  // 基础信息：关键词本身\n  parts.push(keyword.keyword);\n\n  // 如果需要包含元数据\n  if (CONFIG.includeMetadata) {\n    const metadata = [];\n    if (keyword.search_volume) {\n      metadata.push(`搜索量:${keyword.search_volume}`);\n    }\n    if (keyword.competition_level) {\n      metadata.push(`竞争度:${keyword.competition_level}`);\n    }\n    if (keyword.word_count) {\n      metadata.push(`单词数:${keyword.word_count}`);\n    }\n\n    if (metadata.length > 0) {\n      parts.push(`(${metadata.join(', ')})`);\n    }\n  }\n\n  return parts.join(' ');\n}\n\n// 生成单个合并文本\nfunction generateSingleText(keywords) {\n  const textList = keywords.map(kw => processKeywordForText(kw));\n  return textList.join(CONFIG.separator);\n}\n\n// 生成批量处理的多个item\nfunction generateBatchItems(keywords) {\n  const items = [];\n\n  // 按批次大小分组\n  for (let i = 0; i < keywords.length; i += CONFIG.batchSize) {\n    const batch = keywords.slice(i, i + CONFIG.batchSize);\n    // 使用逗号分隔,最后一个关键词后也加逗号\n    const batchText = batch.map(kw => processKeywordForText(kw)).join(', ') + ', ';\n\n    const textWithNewline = batchText;\n    const messageWithNewline = batchText;\n\n    items.push({\n      json: {\n        text: textWithNewline,\n        message: messageWithNewline,  // 兼容不同的大模型节点\n        keywords: batch.map(kw => kw.keyword),  // 保留原始关键词列表\n        batch_index: Math.floor(i / CONFIG.batchSize) + 1,\n        batch_size: batch.length,\n        metadata: {\n          total_keywords: keywords.length,\n          current_batch: Math.floor(i / CONFIG.batchSize) + 1,\n          total_batches: Math.ceil(keywords.length / CONFIG.batchSize)\n        }\n      }\n    });\n  }\n\n  return items;\n}\n\n// 生成带prompt的格式\nfunction generatePromptFormat(keywords) {\n  const keywordText = generateSingleText(keywords);\n  const prompt = CONFIG.promptTemplate.replace('{keywords}', keywordText);\n\n  return {\n    json: {\n      text: prompt,\n      message: prompt,\n      prompt: prompt,\n      keywords: keywords.map(kw => kw.keyword),\n      metadata: {\n        total_keywords: keywords.length,\n        mode: 'prompt'\n      }\n    }\n  };\n}\n\n// 主处理逻辑\ntry {\n  console.log('开始转换关键词为文本格式...');\n\n  const inputItems = $input.all();\n  console.log(`接收到 ${inputItems.length} 个输入项`);\n\n  let allKeywords = [];\n\n  // 收集所有关键词\n  inputItems.forEach((inputItem, index) => {\n    const data = inputItem.json;\n\n    if (data && data.keywords && Array.isArray(data.keywords)) {\n      console.log(`输入项 ${index + 1} 包含 ${data.keywords.length} 个关键词`);\n      allKeywords = allKeywords.concat(data.keywords);\n    }\n  });\n\n  console.log(`总共收集到 ${allKeywords.length} 个关键词`);\n\n  // 根据配置的输出模式处理\n  let output;\n\n  switch (CONFIG.outputMode) {\n    case 'single':\n      // 单个合并文本模式\n      const singleText = generateSingleText(allKeywords);\n      output = {\n        json: {\n          text: singleText,\n          message: singleText,  // 兼容不同的大模型节点\n          keywords: allKeywords.map(kw => kw.keyword),\n          metadata: {\n            total_keywords: allKeywords.length,\n            mode: 'single'\n          }\n        }\n      };\n      console.log('生成单个合并文本');\n      break;\n\n    case 'batch':\n      // 批量处理模式\n      output = generateBatchItems(allKeywords);\n      console.log(`生成 ${output.length} 个批次`);\n      break;\n\n    case 'prompt':\n      // 带prompt的格式\n      output = generatePromptFormat(allKeywords);\n      console.log('生成带prompt的文本格式');\n      break;\n\n    default:\n      throw new Error(`不支持的输出模式: ${CONFIG.outputMode}`);\n  }\n\n  return output;\n\n} catch (error) {\n  console.error('转换过程中发生错误:', error.message);\n  return {\n    json: {\n      error: error.message,\n      text: '',\n      message: '',\n      metadata: {\n        status: 'error'\n      }\n    }\n  };\n}\n\n/* 使用说明：\n\n1. 输出模式（outputMode）：\n   - 'single': 所有关键词合并为一个文本，适合一次性分析所有关键词\n   - 'batch': 分批处理，每批10个（可调整），适合大量关键词的逐批分析\n   - 'prompt': 将关键词嵌入到预定义的prompt模板中\n\n2. Google Gemini节点连接：\n   - 本节点输出的text或message字段可直接作为Gemini节点的输入\n   - Gemini节点通常使用{{ $json.text }}或{{ $json.message }}获取文本\n\n3. 批处理模式：\n   - 会生成多个item，每个item包含一批关键词\n   - Gemini节点会对每个item单独处理\n\n4. 配置调整：\n   - 修改CONFIG对象来调整输出格式\n   - batchSize控制每批大小\n   - separator控制文本分隔符\n   - includeMetadata决定是否包含额外信息\n\n*/"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b497e29c-cd9c-4577-92d7-461b15adf744",
+      "name": "keyword_to_text"
+    },
+    {
+      "parameters": {
+        "jsCode": "// N8N节点：从上一个AI节点中提取JSON数据并输出处理后的数组\n// 使用N8N的$input.all()获取上一个节点的数据\n\n// 主处理逻辑\ntry {\n    console.log('开始处理N8N输入数据...');\n\n    // 获取上一个节点的所有输入数据\n    const inputItems = $input.all();\n    console.log(`接收到 ${inputItems.length} 个输入项`);\n\n    let extractedData = null;\n\n    // 处理输入项（通常是AI节点的输出）\n    inputItems.forEach((inputItem, index) => {\n        console.log(`处理输入项 ${index + 1}...`);\n\n        const data = inputItem.json;\n\n        // 检查是否是AI节点的响应格式\n        if (data && data.candidates && data.candidates[0] && data.candidates[0].content) {\n            // 提取text字段（和2.json格式相同）\n            const textContent = data.candidates[0].content.parts[0].text;\n            console.log('✓ 成功提取text字段内容');\n\n            // 首先尝试提取JSON部分（去掉```json标记的格式）\n            const jsonMatch = textContent.match(/```json\\n([\\s\\S]*?)\\n```/);\n            if (jsonMatch) {\n                const jsonContent = jsonMatch[1];\n                console.log('✓ 成功提取JSON内容（markdown格式）');\n\n                // 解析JSON数据\n                extractedData = JSON.parse(jsonContent);\n                console.log(`✓ 成功解析数据，共${extractedData.length}条记录`);\n            } else {\n                // 如果没有markdown标记，尝试直接解析text内容为JSON\n                console.log('未找到markdown格式，尝试直接解析JSON...');\n                try {\n                    extractedData = JSON.parse(textContent);\n                    console.log(`✓ 成功直接解析JSON数据，共${extractedData.length}条记录`);\n                } catch (parseError) {\n                    console.log('直接解析JSON失败:', parseError.message);\n                }\n            }\n        }\n\n        // 如果已经是处理好的数组格式\n        else if (Array.isArray(data)) {\n            extractedData = data;\n            console.log(`✓ 直接使用数组数据，共${extractedData.length}条记录`);\n        }\n\n        // 如果是单个对象包含数组\n        else if (data && Array.isArray(data.results)) {\n            extractedData = data.results;\n            console.log(`✓ 使用results数组，共${extractedData.length}条记录`);\n        }\n    });\n\n    if (!extractedData || !Array.isArray(extractedData)) {\n        throw new Error('无法提取有效的关键词数据');\n    }\n\n    // 输出统计信息\n    console.log('\\n=== 处理统计 ===');\n    console.log(`总关键词数：${extractedData.length}`);\n\n    // 按意向分类统计\n    const intentStats = {};\n    extractedData.forEach(item => {\n        const intent = item['intent_type'] || item['intent_category'] || item['Intent Category'] || '未分类';\n        intentStats[intent] = (intentStats[intent] || 0) + 1;\n    });\n\n    console.log('\\n意向分类统计：');\n    Object.entries(intentStats).forEach(([intent, count]) => {\n        console.log(`  ${intent}: ${count} 个`);\n    });\n\n    // 评分统计\n    const scores = extractedData.map(item =>\n        item['final_score'] || item['Final Score'] || 0\n    ).filter(score => score > 0);\n\n    if (scores.length > 0) {\n        const avgScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;\n        const maxScore = Math.max(...scores);\n        const minScore = Math.min(...scores);\n\n        console.log('\\n评分统计：');\n        console.log(`  平均分：${avgScore.toFixed(2)}`);\n        console.log(`  最高分：${maxScore}`);\n        console.log(`  最低分：${minScore}`);\n\n        // 高分关键词（8分以上）\n        const highScoreKeywords = extractedData.filter(item =>\n            (item['final_score'] || item['Final Score'] || 0) >= 8\n        );\n        console.log(`  高分关键词（≥8分）：${highScoreKeywords.length} 个`);\n    }\n\n    console.log('\\n处理完成！');\n\n    // 直接返回提取的数据数组给下一个节点\n    return extractedData;\n\n} catch (error) {\n    console.error('处理过程中发生错误:', error.message);\n    return {\n        error: error.message,\n        data: []\n    };\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        848,
+        0
+      ],
+      "id": "6df533ba-618d-411e-9c6c-5842849274a1",
+      "name": "keyword_analysis_results_2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        32,
+        368
+      ],
+      "id": "a2e99095-609b-4eca-a858-640211ec9a88",
+      "name": "keywords2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// N8N节点：将AI分析结果映射到关键词数据中\n// 功能：通过keyword匹配，将intent_type和final_score填入对应的intent_type和keyword_intent_score\n// 输入：上一个节点的JSON数据（包含AI分析结果数组 + metadata和keywords对象）\n// 输出：只包含metadata和keywords的JSON对象\n\ntry {\n    const inputItems = $input.all();\n\n    if (!inputItems || inputItems.length === 0) {\n        throw new Error('未接收到输入数据');\n    }\n\n    // N8N节点输出的数据可能有多种格式\n    // 1. 直接是数组：inputItems本身就是多个item\n    // 2. 单个item包含数组：inputItems[0].json是数组\n    let rawData = null;\n\n    // 尝试从第一个item获取数据\n    if (inputItems[0].json) {\n        rawData = inputItems[0].json;\n        // 处理可能的多层包装\n        if (rawData.data) {\n            rawData = rawData.data;\n        }\n    }\n\n    // 如果不是数组，尝试将所有items合并\n    if (!Array.isArray(rawData)) {\n        rawData = inputItems.map(item => item.json);\n    }\n\n    if (!Array.isArray(rawData)) {\n        throw new Error('输入数据格式错误：无法解析为数组格式');\n    }\n\n    console.log(`接收到 ${rawData.length} 个数据项`);\n\n    // 3.json的格式：\n    // [\n    //   {AI分析结果1: keyword, intent_type, final_score...},\n    //   {AI分析结果2: ...},\n    //   ...\n    //   {最后一个元素: metadata: {...}, keywords: [...]}\n    // ]\n\n    // 数组最后一个元素应该是包含metadata和keywords的对象\n    const lastItem = rawData[rawData.length - 1];\n\n    if (!lastItem || !lastItem.metadata || !lastItem.keywords) {\n        throw new Error('数据格式错误：数组最后一个元素应包含metadata和keywords字段');\n    }\n\n    const keywordData = lastItem;\n    // 除最后一个元素外，其他都是AI分析结果\n    const analysisResults = rawData.slice(0, -1);\n\n    if (!keywordData || !keywordData.keywords) {\n        throw new Error('未找到包含keywords字段的数据');\n    }\n\n    console.log(`找到 ${analysisResults.length} 条AI分析结果`);\n    console.log(`找到 ${keywordData.keywords.length} 个关键词待处理`);\n\n    // 创建keyword到分析结果的映射表\n    const analysisMap = new Map();\n    for (const analysis of analysisResults) {\n        analysisMap.set(analysis.keyword, analysis);\n    }\n\n    // 统计信息\n    let matchedCount = 0;\n    let unmatchedKeywords = [];\n    let unmatchedAnalysis = new Set(analysisMap.keys());\n\n    // 遍历keywords数组，填充intent_type和keyword_intent_score\n    for (const keyword of keywordData.keywords) {\n        const keywordText = keyword.keyword;\n\n        if (analysisMap.has(keywordText)) {\n            const analysis = analysisMap.get(keywordText);\n\n            // 填充字段\n            keyword.intent_type = analysis.intent_type;\n            keyword.keyword_intent_score = analysis.final_score;\n\n            matchedCount++;\n            unmatchedAnalysis.delete(keywordText);\n        } else {\n            unmatchedKeywords.push(keywordText);\n        }\n    }\n\n    // 输出统计信息\n    console.log('\\n=== 数据映射统计 ===');\n    console.log(`成功匹配: ${matchedCount} 个关键词`);\n    console.log(`未匹配的关键词: ${unmatchedKeywords.length} 个`);\n    console.log(`未使用的分析结果: ${unmatchedAnalysis.size} 个`);\n\n    if (unmatchedKeywords.length > 0 && unmatchedKeywords.length <= 10) {\n        console.log('\\n未匹配的关键词列表:');\n        unmatchedKeywords.forEach(kw => console.log(`  - ${kw}`));\n    }\n\n    if (unmatchedAnalysis.size > 0 && unmatchedAnalysis.size <= 10) {\n        console.log('\\n未使用的分析结果:');\n        unmatchedAnalysis.forEach(kw => console.log(`  - ${kw}`));\n    }\n\n    // 确保输出对象的metadata字段在最前面\n    const output = {\n        metadata: keywordData.metadata,\n        keywords: keywordData.keywords\n    };\n\n    console.log('\\n✅ 数据映射完成，准备输出');\n\n    return output;\n\n} catch (error) {\n    console.error('❌ 处理失败:', error.message);\n    console.error('错误堆栈:', error.stack);\n    throw error;\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        368
+      ],
+      "id": "1e2e9195-6bfa-410b-b86e-fc3d21531676",
+      "name": "map_intent_data"
+    },
+    {
+      "parameters": {
+        "jsCode": "// N8N节点：关键词SEO数据评分系统\n// 功能：根据keyword_scoring.md规则对关键词进行评分\n// 输入：上一个节点的JSON数据（包含metadata和keywords）\n// 输出：包含所有评分字段的JSON对象\n\n// 1. 搜索量评分（满分30分）\nfunction calculateSearchVolumeScore(searchVolume) {\n    if (searchVolume > 50000) return 30;\n    if (searchVolume >= 10001) return 25;\n    if (searchVolume >= 5001) return 20;\n    if (searchVolume >= 1001) return 15;\n    if (searchVolume >= 101) return 10;\n    return 5;\n}\n\n// 2.1 CPC评分（满分10分）\nfunction calculateCpcScore(cpc) {\n    if (cpc === null || cpc <= 0.25) return 10;\n    if (cpc <= 0.75) return 8;\n    if (cpc <= 1.50) return 6;\n    if (cpc <= 3.00) return 4;\n    return 2;\n}\n\n// 2.2 竞争指数评分（满分10分）\nfunction calculateCompetitionScore(competition) {\n    if (competition === null || competition <= 0.20) return 10;\n    if (competition <= 0.40) return 8;\n    if (competition <= 0.60) return 6;\n    if (competition <= 0.80) return 4;\n    return 2;\n}\n\n// 2.3 页面顶部出价评分（满分10分）\nfunction calculateBidScore(lowBid, highBid) {\n    if (lowBid === null && highBid === null) return 10;\n\n    let avgBid;\n    if (lowBid === null) {\n        avgBid = highBid;\n    } else if (highBid === null) {\n        avgBid = lowBid;\n    } else {\n        avgBid = (lowBid + highBid) / 2;\n    }\n\n    if (avgBid <= 0.50) return 10;\n    if (avgBid <= 1.50) return 8;\n    if (avgBid <= 3.00) return 6;\n    if (avgBid <= 5.00) return 4;\n    return 2;\n}\n\n// 3. 意向类别评分（满分20分）\nfunction calculateIntentTypeScore(intentType) {\n    const scoreMap = {\n        'Direct Intent': 20,\n        'Indirect Intent': 12,\n        'Less Relevant': 4,\n        'Irrelevant': 0\n    };\n    return scoreMap[intentType] || 0;\n}\n\n// 4. 优先级分级（ABC三级）\nfunction calculatePriority(totalScore) {\n    if (totalScore >= 83) return 'A';\n    if (totalScore >= 65) return 'B';\n    return 'C';\n}\n\ntry {\n    const inputItems = $input.all();\n\n    if (!inputItems || inputItems.length === 0) {\n        throw new Error('未接收到输入数据');\n    }\n\n    // 获取输入数据\n    let rawData = inputItems[0].json;\n\n    // 处理可能的多层包装\n    if (rawData.data) {\n        rawData = rawData.data;\n    }\n\n    // 如果是数组，取第一个元素\n    const data = Array.isArray(rawData) ? rawData[0] : rawData;\n\n    if (!data.keywords || !Array.isArray(data.keywords)) {\n        throw new Error('数据格式错误：未找到keywords数组');\n    }\n\n    console.log(`\\n找到 ${data.keywords.length} 个关键词待评分\\n`);\n\n    let processedCount = 0;\n    const priorityStats = { A: 0, B: 0, C: 0 };\n\n    // 遍历每个关键词进行评分\n    for (const keyword of data.keywords) {\n        // 1. 搜索量评分\n        keyword.search_volume_score = calculateSearchVolumeScore(keyword.search_volume || 0);\n\n        // 2. 竞争度评分\n        keyword.base_competition_score = calculateCompetitionScore(keyword.competition);\n        keyword.cpc_score = calculateCpcScore(keyword.cpc);\n        keyword.bid_score = calculateBidScore(keyword.low_top_of_page_bid, keyword.high_top_of_page_bid);\n\n        // 计算总竞争度评分\n        keyword.total_competition_score =\n            keyword.base_competition_score +\n            keyword.cpc_score +\n            keyword.bid_score;\n\n        // 3. 意向类别评分\n        keyword.intent_type_score = calculateIntentTypeScore(keyword.intent_type);\n\n        // 4. 计算总分\n        keyword.total_score =\n            keyword.search_volume_score +\n            (keyword.keyword_intent_score || 0) +\n            keyword.intent_type_score +\n            keyword.total_competition_score;\n\n        // 5. 分配优先级\n        keyword.priority = calculatePriority(keyword.total_score);\n        priorityStats[keyword.priority]++;\n\n        processedCount++;\n\n        // 显示前3个处理示例\n        if (processedCount <= 3) {\n            console.log(`示例 ${processedCount}: ${keyword.keyword}`);\n            console.log(`  搜索量评分: ${keyword.search_volume_score}`);\n            console.log(`  关键词意图评分: ${keyword.keyword_intent_score}`);\n            console.log(`  意向类别评分: ${keyword.intent_type_score}`);\n            console.log(`  竞争度评分: ${keyword.total_competition_score} (基础:${keyword.base_competition_score} + CPC:${keyword.cpc_score} + 出价:${keyword.bid_score})`);\n            console.log(`  总分: ${keyword.total_score}`);\n            console.log(`  优先级: ${keyword.priority}\\n`);\n        }\n    }\n\n    // 输出统计信息\n    console.log('=== 评分完成统计 ===');\n    console.log(`总处理关键词: ${processedCount} 个`);\n    console.log(`A级关键词: ${priorityStats.A} 个 (84-100分)`);\n    console.log(`B级关键词: ${priorityStats.B} 个 (65-83分)`);\n    console.log(`C级关键词: ${priorityStats.C} 个 (<65分)`);\n\n    // 更新metadata\n    data.metadata.processing_stage = 'scored';\n    data.metadata.scored_at = new Date().toISOString();\n    data.metadata.priority_distribution = priorityStats;\n\n    // 返回结果给下一个节点\n    const output = {\n        metadata: data.metadata,\n        keywords: data.keywords\n    };\n\n    console.log('\\n✅ 评分完成，准备输出');\n\n    return output;\n\n} catch (error) {\n    console.error('❌ 评分失败:', error.message);\n    console.error('错误堆栈:', error.stack);\n    throw error;\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        368
+      ],
+      "id": "539744f1-5bfd-4101-ae2a-6c1724436634",
+      "name": "keyword_scoring"
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "binaryPropertyName": "=data",
+        "options": {
+          "fileName": "keyword_analysis",
+          "headerRow": true
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1184,
+        368
+      ],
+      "id": "0a4c071c-087f-47db-9a32-7f8792cc003d",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "jsCode": "// N8N节点：准备数据用于CSV转换\n// 功能：从{metadata, keywords}格式提取keywords数组，以便Convert to File节点正确转换为CSV\n// 输入：上一个节点的JSON数据（包含metadata和keywords）\n// 输出：keywords数组（每个关键词作为独立的item）\n\ntry {\n    const inputItems = $input.all();\n\n    if (!inputItems || inputItems.length === 0) {\n        throw new Error('未接收到输入数据');\n    }\n\n    // 获取输入数据\n    let rawData = inputItems[0].json;\n\n    // 处理可能的多层包装\n    if (rawData.data) {\n        rawData = rawData.data;\n    }\n\n    // 如果是数组，取第一个元素\n    const data = Array.isArray(rawData) ? rawData[0] : rawData;\n\n    if (!data.keywords || !Array.isArray(data.keywords)) {\n        throw new Error('数据格式错误：未找到keywords数组');\n    }\n\n    console.log(`找到 ${data.keywords.length} 个关键词`);\n    console.log('准备转换为CSV格式...\\n');\n\n    // N8N的Convert to File节点需要接收数组格式\n    // 每个数组元素都是一个独立的item，会变成CSV的一行\n    // 删除不需要的字段：number, main_category, sub_category\n    const keywords = data.keywords.map(kw => {\n        const cleaned = { ...kw };\n        delete cleaned.number;\n        delete cleaned.main_category;\n        delete cleaned.sub_category;\n        return cleaned;\n    });\n\n    console.log('前3个关键词预览:');\n    keywords.slice(0, 3).forEach((kw, i) => {\n        console.log(`${i + 1}. ${kw.keyword} - 优先级: ${kw.priority}, 总分: ${kw.total_score}`);\n    });\n\n    console.log('\\n✅ 数据准备完成，可以传递给Convert to File节点');\n\n    // 返回数组，每个元素会成为CSV的一行\n    return keywords;\n\n} catch (error) {\n    console.error('❌ 数据准备失败:', error.message);\n    console.error('错误堆栈:', error.stack);\n    throw error;\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1008,
+        368
+      ],
+      "id": "b25239ab-f378-4d7c-8710-c2e62e897f7e",
+      "name": "prepare_for_csv"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 关键词合并节点 V2 - 确保合并所有输入项\n// 运行模式: Run Once for All Items\n// 说明：这个版本会等待并合并所有输入项以及只保留1000个关键词\n\n// 获取所有输入项\nconst allInputItems = $input.all();\nconsole.log(`总共接收到 ${allInputItems.length} 个输入项`);\n\nlet allKeywords = [];\nconst processedAPIs = new Set();\n\n// 处理所有输入项\nallInputItems.forEach((inputItem, index) => {\n    console.log(`处理输入项 ${index + 1}...`);\n\n    // 检查是否是原始API响应\n    const responseData = inputItem.json;\n\n    // 处理已经是keywords格式的数据（来自之前的处理）\n    if (responseData.keywords && Array.isArray(responseData.keywords)) {\n        console.log(`输入项 ${index + 1} 已经是处理后的格式，包含 ${responseData.keywords.length} 个关键词`);\n        allKeywords = allKeywords.concat(responseData.keywords);\n        return;\n    }\n\n    // 处理原始API响应数据\n    if (responseData && responseData.tasks && responseData.tasks[0]) {\n        const path = responseData.tasks[0].path || [];\n        let apiType = null;\n\n        if (path.includes('keyword_suggestions')) {\n            apiType = 'keyword_suggestions';\n        } else if (path.includes('related_keywords')) {\n            apiType = 'related_keywords';\n        }\n\n        if (apiType) {\n            processedAPIs.add(apiType);\n            console.log(`处理 ${apiType} API数据...`);\n\n            const task = responseData.tasks[0];\n            const taskData = task.data || {};\n            const seedKeyword = taskData.keyword || null;\n            const locationCode = taskData.location_code || null;\n            const languageCode = taskData.language_code || 'en';\n\n            if (task.result && task.result[0] && task.result[0].items) {\n                const items = task.result[0].items;\n\n                items.forEach(item => {\n                    let keyword = null;\n                    let keywordInfo = {};\n\n                    if (apiType === 'keyword_suggestions') {\n                        keyword = item.keyword;\n                        keywordInfo = item.keyword_info || {};\n                    } else if (apiType === 'related_keywords') {\n                        if (item.keyword_data) {\n                            keyword = item.keyword_data.keyword;\n                            keywordInfo = item.keyword_data.keyword_info || {};\n                        } else {\n                            keyword = item.keyword;\n                            keywordInfo = item.keyword_info || {};\n                        }\n                    }\n\n                    if (keyword) {\n                        allKeywords.push({\n                            api_type: apiType,\n                            seed_keyword: seedKeyword,\n                            keyword: keyword,\n                            location_code: locationCode,\n                            language_code: languageCode,\n                            search_volume: keywordInfo.search_volume || null,\n                            cpc: keywordInfo.cpc || null,\n                            competition: keywordInfo.competition || null,\n                            competition_level: keywordInfo.competition_level || null,\n                            last_updated_time: keywordInfo.last_updated_time || null,\n                            low_top_of_page_bid: keywordInfo.low_top_of_page_bid || null,\n                            high_top_of_page_bid: keywordInfo.high_top_of_page_bid || null\n                        });\n                    }\n                });\n\n                console.log(`从 ${apiType} 提取了 ${items.length} 个关键词`);\n            }\n        }\n    }\n});\n\nconsole.log(`\\n去重前统计：`);\nconsole.log(`- 总关键词数：${allKeywords.length}`);\nconsole.log(`- 处理的API类型：${Array.from(processedAPIs).join(', ')}`);\n\n// 统计各API类型的关键词数量\nconst stats = {};\nallKeywords.forEach(kw => {\n    stats[kw.api_type] = (stats[kw.api_type] || 0) + 1;\n});\n\nObject.entries(stats).forEach(([type, count]) => {\n    console.log(`- ${type}: ${count} 个关键词`);\n});\n\n// 基于keyword值进行去重和合并\nconsole.log(`\\n开始关键词去重合并...`);\nconst keywordMap = new Map();\n\nallKeywords.forEach(kw => {\n    const keyword = kw.keyword;\n\n    if (keywordMap.has(keyword)) {\n        // 如果关键词已存在，合并数据（取最大值）\n        const existing = keywordMap.get(keyword);\n\n        // 对数值字段取最大值\n        existing.search_volume = Math.max(\n            existing.search_volume || 0,\n            kw.search_volume || 0\n        ) || null;\n\n        existing.cpc = Math.max(\n            existing.cpc || 0,\n            kw.cpc || 0\n        ) || null;\n\n        existing.competition = Math.max(\n            existing.competition || 0,\n            kw.competition || 0\n        ) || null;\n\n        existing.low_top_of_page_bid = Math.max(\n            existing.low_top_of_page_bid || 0,\n            kw.low_top_of_page_bid || 0\n        ) || null;\n\n        existing.high_top_of_page_bid = Math.max(\n            existing.high_top_of_page_bid || 0,\n            kw.high_top_of_page_bid || 0\n        ) || null;\n\n        // 更新时间取最新的\n        if (kw.last_updated_time &&\n            (!existing.last_updated_time || kw.last_updated_time > existing.last_updated_time)) {\n            existing.last_updated_time = kw.last_updated_time;\n        }\n\n        // 如果现有竞争等级为null，使用新的\n        if (!existing.competition_level && kw.competition_level) {\n            existing.competition_level = kw.competition_level;\n        }\n\n    } else {\n        // 新关键词，创建去重后的条目\n        keywordMap.set(keyword, {\n            api_type: \"merge_deduplication\",  // 固定值表示合并去重\n            seed_keyword: kw.seed_keyword,\n            keyword: keyword,\n            location_code: null,  // 固定为null\n            language_code: kw.language_code,\n            search_volume: kw.search_volume || null,\n            cpc: kw.cpc || null,\n            competition: kw.competition || null,\n            competition_level: kw.competition_level || null,\n            last_updated_time: kw.last_updated_time || null,\n            low_top_of_page_bid: kw.low_top_of_page_bid || null,\n            high_top_of_page_bid: kw.high_top_of_page_bid || null\n        });\n    }\n});\n\n// 将Map转换为数组\nconst deduplicatedKeywords = Array.from(keywordMap.values());\n\nconsole.log(`\\n去重后统计：`);\nconsole.log(`- 去重前关键词数：${allKeywords.length}`);\nconsole.log(`- 去重后关键词数：${deduplicatedKeywords.length}`);\nconsole.log(`- 移除重复关键词：${allKeywords.length - deduplicatedKeywords.length} 个`);\n\n// 限制关键词数量为最多1000个\nconst MAX_KEYWORDS = 1000;\nlet finalKeywords = deduplicatedKeywords;\nlet limitApplied = false;\nlet discardedCount = 0;\n\nif (deduplicatedKeywords.length > MAX_KEYWORDS) {\n    finalKeywords = deduplicatedKeywords.slice(0, MAX_KEYWORDS);\n    discardedCount = deduplicatedKeywords.length - MAX_KEYWORDS;\n    limitApplied = true;\n\n    console.log(`\\n⚠️ 关键词数量限制：`);\n    console.log(`- 去重后关键词数：${deduplicatedKeywords.length}`);\n    console.log(`- 限制数量：${MAX_KEYWORDS}`);\n    console.log(`- 保留关键词：${finalKeywords.length}`);\n    console.log(`- 丢弃关键词：${discardedCount} 个`);\n} else {\n    console.log(`\\n✅ 关键词数量在限制范围内（${deduplicatedKeywords.length} <= ${MAX_KEYWORDS}），无需限制`);\n}\n\n// 创建最终输出\nconst outputData = {\n    metadata: {\n        generated_at: new Date().toISOString(),\n        total_keywords: finalKeywords.length,\n        original_count: allKeywords.length,\n        duplicates_removed: allKeywords.length - deduplicatedKeywords.length,\n        limit_applied: limitApplied,\n        max_keywords_limit: MAX_KEYWORDS,\n        discarded_keywords: discardedCount\n    },\n    keywords: finalKeywords\n};\n\n// 返回单个数组项（重要：确保返回数组格式）\nreturn [{\n    json: outputData\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        368
+      ],
+      "id": "b6372b17-0f81-4f5b-8be7-e8fb42f28ec5",
+      "name": "keyword_merge_deduplication"
+    },
+    {
+      "parameters": {
+        "jsCode": "// N8N节点：将搜索量查询结果填充回原始关键词数据\n\ntry {\n    console.log('开始合并搜索量数据...');\n\n    const allInputs = $input.all();\n    console.log(`接收到 ${allInputs.length} 个输入项`);\n\n    let originalData = null;\n    let searchVolumeResults = null;\n\n    // 从两个输入项中提取数据\n    allInputs.forEach((item, index) => {\n        console.log(`处理输入项 ${index}...`);\n\n        // 第一个输入项：原始关键词数据\n        if (item.json && item.json.keywords && Array.isArray(item.json.keywords)) {\n            originalData = item.json;\n            console.log(`✓ 找到原始关键词数据，包含 ${originalData.keywords.length} 个关键词`);\n        }\n\n        // 第二个输入项：搜索量查询结果\n        if (item.json && item.json.tasks && Array.isArray(item.json.tasks) &&\n            item.json.tasks[0] && item.json.tasks[0].result && Array.isArray(item.json.tasks[0].result)) {\n            searchVolumeResults = item.json.tasks[0].result;\n            console.log(`✓ 找到搜索量结果，包含 ${searchVolumeResults.length} 个关键词`);\n        }\n    });\n\n    if (!originalData || !searchVolumeResults) {\n        throw new Error('未能找到完整的原始数据或搜索量结果');\n    }\n\n    // 创建搜索量映射表 - 关键词 -> 最新搜索量\n    const volumeMap = new Map();\n\n    searchVolumeResults.forEach(result => {\n        const keyword = result.keyword;\n        let latestVolume = result.search_volume; // 默认使用总搜索量\n\n        // 如果有月度数据，使用最新月份的搜索量\n        if (result.monthly_searches && Array.isArray(result.monthly_searches) && result.monthly_searches.length > 0) {\n            latestVolume = result.monthly_searches[0].search_volume;\n        }\n\n        volumeMap.set(keyword, latestVolume);\n    });\n\n    console.log(`✓ 构建了 ${volumeMap.size} 个关键词的搜索量映射`);\n\n    // 更新原始数据中的搜索量\n    let updatedCount = 0;\n    let skippedCount = 0;\n\n    originalData.keywords.forEach(keywordItem => {\n        const keyword = keywordItem.keyword;\n\n        if (volumeMap.has(keyword)) {\n            const newVolume = volumeMap.get(keyword);\n            const oldVolume = keywordItem.search_volume;\n\n            keywordItem.search_volume = newVolume;\n            updatedCount++;\n\n            if (newVolume !== oldVolume) {\n                console.log(`✓ 更新 \"${keyword}\": ${oldVolume} -> ${newVolume}`);\n            }\n        } else {\n            skippedCount++;\n            console.log(`⚠ 跳过 \"${keyword}\": 未找到搜索量数据`);\n        }\n    });\n\n    console.log(`\\n=== 更新统计 ===`);\n    console.log(`成功更新: ${updatedCount} 个关键词`);\n    console.log(`跳过处理: ${skippedCount} 个关键词`);\n\n    // 更新元数据时间戳\n    originalData.metadata.last_updated_at = new Date().toISOString();\n    originalData.metadata.search_volume_updated = true;\n\n    console.log('✓ 数据更新完成，已删除搜索量结果部分');\n\n    // 只返回更新后的原始关键词数据\n    return originalData;\n\n} catch (error) {\n    console.error('处理过程中发生错误:', error.message);\n    return {\n        error: error.message,\n        keywords: []\n    };\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        816,
+        368
+      ],
+      "id": "ffbe8490-09d3-4726-add5-db25576de4e5",
+      "name": "merge_search_volumes"
+    },
+    {
+      "parameters": {
+        "jsCode": "// N8N节点：提取关键词并转换为DataForSEO搜索量查询API格式\n\n// 主处理逻辑\ntry {\n    console.log('开始处理关键词数据...');\n\n    // 获取上一个节点的所有输入数据\n    const inputItems = $input.all();\n    console.log(`接收到 ${inputItems.length} 个输入项`);\n\n    let keywords = [];\n\n    // 处理输入项 - 只处理1.json格式\n    inputItems.forEach((inputItem, index) => {\n        const data = inputItem.json;\n\n        // 1.json格式：包含keywords数组的对象\n        if (data && data.keywords && Array.isArray(data.keywords)) {\n            data.keywords.forEach(item => {\n                if (item.keyword) {\n                    keywords.push(item.keyword);\n                }\n            });\n            console.log(`✓ 从keywords数组提取到 ${data.keywords.length} 个关键词`);\n        }\n    });\n\n    if (keywords.length === 0) {\n        throw new Error('未能提取到任何关键词');\n    }\n\n    // 输出统计信息\n    console.log('\\n=== 处理统计 ===');\n    console.log(`提取到的唯一关键词数：${keywords.length}`);\n    console.log('前10个关键词示例：', keywords.slice(0, 10));\n\n    // 检查是否超过API限制\n    if (keywords.length > 700) {\n        console.log(`⚠️ 警告：关键词数量(${keywords.length})超过API单批限制(700)，建议分批处理`);\n    }\n\n    // 构建DataForSEO API请求体\n    const apiRequestBody = [\n        {\n            keywords: keywords,\n            search_partners: false\n        }\n    ];\n\n    // 直接返回API请求体\n    return apiRequestBody;\n\n} catch (error) {\n    console.error('处理过程中发生错误:', error.message);\n    // 错误时返回空的API请求体\n    return [\n        {\n            keywords: [],\n            search_partners: false\n        }\n    ];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        640
+      ],
+      "id": "7879e2d2-7615-4999-90e5-bba3e6376025",
+      "name": "extract_keywords_for_search_volume"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dataforseo.com/v3/keywords_data/google/search_volume/live",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[{{ JSON.stringify($json) }}]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        352,
+        640
+      ],
+      "id": "c0ce177c-b7c1-4f0d-bda5-c9c951114d3a",
+      "name": "search_volume",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "v2RuoZD7YLmDTpke",
+          "name": "dataforseo"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        640,
+        368
+      ],
+      "id": "2861a858-540b-4fd3-a4f4-330e001ca0b0",
+      "name": "Merge_volume"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "c9e927b7-ae7d-4bba-9b0a-e22d76934af9",
+      "name": "Merge_intent"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "markdown_field",
+              "name": "markdown_content",
+              "value": "​​Keyword analysis is complete, and the CSV file has been generated.​",
+              "type": "string"
+            },
+            {
+              "id": "timestamp_field",
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1392,
+        368
+      ],
+      "id": "47ee7d7a-4fc0-4dfd-84d5-64712989fd1a",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1alpha/models/gemini-2.5-flash:generateContent",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googlePalmApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"## 一、待处理关键词组\\n【{{ $json.keywords_combined }}】\\n\\n## 二、任务背景信息\\n- **推广意向**: \\\"{{ $input.all()[3].json.intent_sentence }}\\\"。\\n- **意向核心词语**: \\\"{{ $input.all()[3].json.intent_word }}\\\"。\\n\\n## 三、核心任务：分类与评分\\n你必须根据[任务背景信息]，对[待处理关键词组]中的每一个关键词，执行[分类与评分]任务。\\n\\n### 3.1. 思考框架：在执行前必须遵循的逻辑步骤\\n在输出任何结果前，你必须在内部思考过程中，严格遵循以下逻辑步骤，以确保分析的深度和准确性：\\n\\n1.  **目标解构 (Deconstruct the Goal)**:\\n    *   **分析商业目标**: 深入解读\\\"推广意向\\\"，明确最终的商业目的是什么？（例如：是提升品牌知名度？是促成用户下载？是引导购买？还是增加网站访问量？）\\n    *   **定义用户画像**: 基于商业目标，描绘出核心目标用户的画像。他们是谁？他们有什么需求？他们会出现在哪些场景中？\\n\\n2.  **建立分类原则 (Establish Classification Principles)**:\\n    *   **定义 \\\"Direct Intent\\\"**: 根据你解构出的\\\"商业目标\\\"，为\\\"直接意向\\\"下一个精确的定义。什么样的搜索行为，意味着用户已经处在决策的最后阶段，即将触发该商业目标？\\n    *   **定义 \\\"Indirect Intent\\\"**: 根据你描绘的\\\"用户画像\\\"，为\\\"间接意向\\\"下一个精确的定义。目标用户在尚未准备好触发最终商业目标时，会搜索哪些相关的、探索性的、或与身份/社区相关的内容？\\n    *   **定义 \\\"Less Relevant\\\"**: 为\\\"弱相关\\\"下一个精确的定义。哪些关键词虽然在字面上与核心词有重叠，但其背后的用户群体和需求，与你的\\\"用户画像\\\"和\\\"商业目标\\\"完全不同？\\n    *   **建立冲突解决规则**: 当一个关键词可以被归入多个类别时，你将依据什么原则做出最终裁定？（例如：通常，指向具体行动的意图，其优先级高于指向身份认同的意图）。\\n\\n3.  **设计评分体系 (Design the Scoring System)**:\\n    *   **定义 `score_a` (基础相关性分)**: 此分数应如何体现关键词与\\\"意向核心词语\\\"的字面和语义相关性？\\n    *   **定义 `score_b` (场景/画像匹配分)**: 此分数应如何体现关键词与你在步骤1中定义的\\\"用户画像\\\"或其所在\\\"场景\\\"的匹配程度？\\n    *   **定义 `score_c` (商业价值/转化分)**: 此分数应如何体现关键词与你在步骤1中定义的\\\"商业目标\\\"的直接关联程度？分数越高，是否意味着转化概率越高？\\n    *   **确保区分度**: 你设计的评分体系，必须确保最终的 `final_score` 具有足够高的区分度，能够清晰地将不同价值的关键词在分数上拉开差距，避免大量关键词得到相同的分数。\\n\\n### 3.2. 执行任务：对每个关键词进行处理\\n在完成了上述思考后，严格依据你为自己建立的原则和体系，对每一个关键词进行处理。\\n\\n1.  **意向分类 (intent_type)**: 从 \\\"Direct Intent\\\"、\\\"Indirect Intent\\\"、\\\"Less Relevant\\\"、\\\"Irrelevant\\\" 中选择一个最合适的。\\n2.  **意向评分 (Scoring)**:\\n    *   给出 `score_a`, `score_b`, `score_c` 的分数。\\n    *   计算 `final_score`，其值必须为三个子分数的总和。\\n3.  **约束条件**: 只能对给定的关键词组进行打分，不可新增、删除或修改。\\n\\n## 四、输出格式要求\\n直接输出纯JSON数组格式，每个关键词为一个对象，包含以下字段：\\n- `keyword`\\n- `intent_type`\\n- `score_a`\\n- `score_b`\\n- `score_c`\\n- `final_score`\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"candidate_count\": 1,\n    \"response_mime_type\": \"application/json\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        608,
+        0
+      ],
+      "id": "0330ad91-7efa-4fb9-9b93-48fbc312a3dc",
+      "name": "AI",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "",
+          "name": "dataforseo"
+        },
+        "googlePalmApi": {
+          "id": "",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 聚合节点 - 将多个items合并为单个item供Gemini批量处理\n// 功能：替代executeOnce参数，符合mule-run标准\n// 位置：应放置在 Merge_intent 和 Gemini_flash_2.5 之间\n// 运行模式：Run Once for All Items\n\n// 获取所有输入items\nconst allItems = $input.all();\n\nconsole.log(`聚合节点：收到 ${allItems.length} 个输入items`);\n\n// 分类提取数据\nconst keywordTexts = [];\nlet intentData = null;\n\nallItems.forEach((item, index) => {\n    const data = item.json;\n\n    // 提取关键词文本\n    if (data.text) {\n        keywordTexts.push(data.text);\n        console.log(`  [${index}] 关键词文本: ${data.text.substring(0, 50)}...`);\n    }\n\n    // 提取意图数据\n    if (data.intent_sentence || data.intent_word) {\n        intentData = {\n            intent_sentence: data.intent_sentence || '',\n            intent_word: data.intent_word || ''\n        };\n        console.log(`  [${index}] 意图数据: sentence=\"${intentData.intent_sentence}\", word=\"${intentData.intent_word}\"`);\n    }\n});\n\n// 构建聚合后的单个item\nconst aggregatedItem = {\n    json: {\n        // 所有关键词文本（用于在Gemini prompt中展示）\n        keyword_texts: keywordTexts,\n\n        // 合并后的关键词文本字符串（方便直接在prompt中使用）\n        keywords_combined: keywordTexts.join('\\n\\n'),\n\n        // 意图数据\n        intent_sentence: intentData ? intentData.intent_sentence : '',\n        intent_word: intentData ? intentData.intent_word : '',\n\n        // 元数据\n        total_keywords: keywordTexts.length,\n        aggregated_at: new Date().toISOString(),\n\n        // 原始数据（如果需要完整访问）\n        original_items: allItems.map(item => item.json)\n    }\n};\n\nconsole.log(`\\n聚合完成：${keywordTexts.length} 个关键词合并为 1 个item`);\nconsole.log(`意图句子: \"${aggregatedItem.json.intent_sentence}\"`);\nconsole.log(`意图词语: \"${aggregatedItem.json.intent_word}\"`);\n\n// 返回单个聚合item\nreturn [aggregatedItem];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "694dac9e-8d62-4673-9ced-ca6c18c42f48",
+      "name": "aggregate_items_for_ai"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "data_preparation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "data_preparation": {
+      "main": [
+        [
+          {
+            "node": "keyword_suggestions",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge_intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "keyword_suggestions": {
+      "main": [
+        [
+          {
+            "node": "keyword_merge_deduplication",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "keyword_processor": {
+      "main": [
+        [
+          {
+            "node": "keyword_to_text",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "keywords2",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "extract_keywords_for_search_volume",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "keyword_to_text": {
+      "main": [
+        [
+          {
+            "node": "Merge_intent",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "keyword_analysis_results_2": {
+      "main": [
+        [
+          {
+            "node": "keywords2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "keywords2": {
+      "main": [
+        [
+          {
+            "node": "map_intent_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "map_intent_data": {
+      "main": [
+        [
+          {
+            "node": "keyword_scoring",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "keyword_scoring": {
+      "main": [
+        [
+          {
+            "node": "Merge_volume",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "prepare_for_csv": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "keyword_merge_deduplication": {
+      "main": [
+        [
+          {
+            "node": "keyword_processor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "merge_search_volumes": {
+      "main": [
+        [
+          {
+            "node": "prepare_for_csv",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "extract_keywords_for_search_volume": {
+      "main": [
+        [
+          {
+            "node": "search_volume",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_volume": {
+      "main": [
+        [
+          {
+            "node": "Merge_volume",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge_volume": {
+      "main": [
+        [
+          {
+            "node": "merge_search_volumes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge_intent": {
+      "main": [
+        [
+          {
+            "node": "aggregate_items_for_ai",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI": {
+      "main": [
+        [
+          {
+            "node": "keyword_analysis_results_2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aggregate_items_for_ai": {
+      "main": [
+        [
+          {
+            "node": "AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7792049d-1c97-4d2a-9fb4-4dd03d7c2302",
+  "meta": {
+    "instanceId": "8347c0692806f2ca40eabb04e91d0e780578bf829716a3d79fc1b373ed8c94ba"
+  },
+  "id": "AVoyksoaamcR0EMf",
+  "tags": []
+}
